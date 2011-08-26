@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1314395254 source:d:\programming\c++\tests\keylogger\win\keylogger_win\main.cpp
+	"main.h"
+	<iostream>
+
+1314395172 d:\programming\c++\tests\keylogger\win\keylogger_win\main.h
+	<windows.h>
+	"../../shared/include/Keylogger_Constants.h"
+
+1314393842 d:\programming\c++\tests\keylogger\shared\include\keylogger_constants.h
+

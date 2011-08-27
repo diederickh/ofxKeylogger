@@ -1,0 +1,31 @@
+ofxKeylogger
+------------
+This addon enables you to listen to system wide keyboard events. This can be
+used, when you want to get nofitied by keyboard events even when the application
+is not active.
+
+It has some limitations atm:
+- on windows you can't get the modifier keys
+- on windows all characters appear to be uppercased (?)
+
+
+Installation Mac:
+--------------------------
+- 	Works only with 10.6 and up
+- 	Create a new group in XCode, call it: "ofxKeylogger"
+- 	Drag the "ofxKeylogger/src" directory into this new group
+- 	Remove the "Keylogger_Win.dll" file from your project 
+
+Installation Win (tested with codeblocks):
+------------------------------------------
+- 	Add the addon to your project (C::B add files recursively)
+	make sure you add only the "ofxKeylogger/src" directory.
+- 	Add an include path to [path_to_addon]/ofxKeylogger/src/
+- 	That's it!
+
+
+Usage
+-----
+- 	Create an event listener for the ofxKeyloggerEvent
+- 	Add the listener like this (just an example) 
+ 	ofxKeylogger::addListener(this, testApp::onKeyloggerKey);

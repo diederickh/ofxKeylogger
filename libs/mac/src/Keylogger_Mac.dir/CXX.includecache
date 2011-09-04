@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Keylogger_Mac.h
+
+/Users/diederickhuijbers/of/addons_diederick/ofxKeylogger/libs/mac/src/../../shared/include/Keylogger_Constants.h
+
+/Users/diederickhuijbers/of/addons_diederick/ofxKeylogger/libs/mac/src/Keylogger_Mac.mm
+Keylogger_Mac.h
+/Users/diederickhuijbers/of/addons_diederick/ofxKeylogger/libs/mac/src/Keylogger_Mac.h
+../../shared/include/Keylogger_Constants.h
+/Users/diederickhuijbers/of/addons_diederick/ofxKeylogger/libs/mac/src/../../shared/include/Keylogger_Constants.h
+Cocoa/Cocoa.h
+-
+Foundation/Foundation.h
+-
+

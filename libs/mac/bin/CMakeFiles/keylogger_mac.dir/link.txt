@@ -1,0 +1,2 @@
+/usr/bin/ar cr Keylogger_Mac.a  CMakeFiles/Keylogger_Mac.dir/src/Keylogger_Mac.mm.o
+/usr/bin/ranlib Keylogger_Mac.a

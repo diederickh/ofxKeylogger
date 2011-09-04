@@ -41,8 +41,12 @@ extern ofEvent<ofxKeyloggerEvent> ofxKeyloggerEventDispatcher;
 class ofxKeylogger {
 public:
 	static ofxKeylogger& getInstance();
+	
 	template <typename ArgumentsType, class ListenerClass>
-	static void addListener(ListenerClass  * listener, void (ListenerClass::*listenerMethod)(ArgumentsType&)){
+	static void addListener(
+					ListenerClass* listener
+					,void (ListenerClass::*listenerMethod)(ArgumentsType&))
+	{
 		ofxKeylogger::create();
 		ofAddListener(ofxKeyloggerEventDispatcher, listener, listenerMethod);
 	}

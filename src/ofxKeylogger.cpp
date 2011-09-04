@@ -21,7 +21,6 @@ void the_keylogger_callback(int key, int modifier) {
 ofxKeylogger::ofxKeylogger()
 {
 	#ifdef _WIN32
-	
 		// Here we copy the dll from the addons dir to the bin dir.
 		string dll_source = ofToDataPath("../Keylogger_Win.dll",true);
 		ofFile dll_path(dll_source);

@@ -29,3 +29,11 @@ Usage
 - 	Create an event listener for the ofxKeyloggerEvent
 - 	Add the listener like this (just an example) 
  	ofxKeylogger::addListener(this, testApp::onKeyloggerKey);
+
+ 	
+
+What about the "libs" dir
+-------------------------
+This directory contains the projects for the keystroke listeners for 
+Windows and Mac specific. For windows I create a .dll and for Mac a static
+library.

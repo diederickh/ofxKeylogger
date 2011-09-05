@@ -2,7 +2,7 @@
 #define __MAIN_H__
 
 #include <windows.h>
-#include "../../shared/include/Keylogger_Constants.h"
+#include "../../../src/ofxKeyloggerKeyCodes.h"
 
 #ifdef BUILD_DLL
     #define DLL_EXPORT __declspec(dllexport)
@@ -14,6 +14,8 @@
 extern "C"
 {
 #endif
+
+char translate_vkcode_to_ascii(int vk, bool shiftPressed, bool& isAscii);
 
 // interesting: http://www.docdroppers.org/wiki/index.php?title=Writing_Keyloggers
 

@@ -1,5 +1,6 @@
 #include "Keylogger_Mac.h"
-#include "../../shared/include/Keylogger_Constants.h"
+//#include "../../shared/include/Keylogger_Constants.h"
+#include "../../../src/ofxKeyloggerKeyCodes.h" // updated, not tested yet
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 

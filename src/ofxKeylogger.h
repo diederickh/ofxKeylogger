@@ -2,6 +2,8 @@
 #define OFXKEYLOGGERH
 #include "ofMain.h"
 #include "ofxKeyloggerEvent.h"
+#include "ofxKeyloggerKeyCodes.h"
+
 extern ofEvent<ofxKeyloggerEvent> ofxKeyloggerEventDispatcher;
 
 /**
@@ -27,13 +29,13 @@ extern ofEvent<ofxKeyloggerEvent> ofxKeyloggerEventDispatcher;
  * 		void onKeyloggerEvent(ofxKeyloggerEvent& ev)
  * }
  *
- * 
+ *
  * // implementation in testApp.cpp
  * void testApp::setup() {
  *  	ofxKeylogger::addListener(this, &testApp::onkeyloggerEvent);
  * }
  *
- *  
+ *
  * void testApp::onKeyloggerEvent(ofxKeyloggerEvent& ev) {
  * 		cout << "got key:" << (char)ev.key << endl;
  * }
@@ -41,7 +43,7 @@ extern ofEvent<ofxKeyloggerEvent> ofxKeyloggerEventDispatcher;
 class ofxKeylogger {
 public:
 	static ofxKeylogger& getInstance();
-	
+
 	template <typename ArgumentsType, class ListenerClass>
 	static void addListener(
 					ListenerClass* listener

@@ -9,3 +9,15 @@
 
 1314393842 d:\programming\c++\tests\keylogger\shared\include\keylogger_constants.h
 
+1315242837 source:d:\programming\c++\addons_diederick\ofxkeylogger\libs\win\keylogger_win\main.cpp
+	"main.h"
+	<iostream>
+
+1315243148 d:\programming\c++\addons_diederick\ofxkeylogger\libs\win\keylogger_win\main.h
+	<windows.h>
+	"../../../src/ofxKeyloggerKeyCodes.h"
+
+1315231486 d:\programming\c++\addons_diederick\ofxkeylogger\libs\shared\include\keylogger_constants.h
+
+1315243107 d:\programming\c++\addons_diederick\ofxkeylogger\src\ofxkeyloggerkeycodes.h
+
